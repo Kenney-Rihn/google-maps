@@ -50,13 +50,15 @@
 
             var infowindow = new google.maps.InfoWindow({
                 content: "<ul><li>Tasty, Tasty food</li><li>Expensive</li></ul>"
-
             });
+
+
             marker.addListener("click", function(){
                 infowindow.open(map,marker);
             });
 
         }
+
 
 
 
