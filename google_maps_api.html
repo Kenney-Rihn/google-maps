@@ -21,7 +21,7 @@
             // "use strict";
             var mapCanvas = document.getElementById("map-canvas");
             var mapOptions = {
-                zoom: 18,
+                zoom: 17,
                 center: {
                     lat: 29.520058,
                     lng: -98.488035
@@ -41,7 +41,10 @@
 
                 }
             });
-            var image1 = "https://media.glassdoor.com/sqll/295508/pappadeaux-seafood-kitchen-squarelogo.png";
+            var image1 = {
+                url:"https://media.glassdoor.com/sqll/295508/pappadeaux-seafood-kitchen-squarelogo.png",
+                scaledSize: new google.maps.Size(60,60)}
+
             marker = new google.maps.Marker({position:{
                     lat: 29.519626,
                     lng: -98.488149,
