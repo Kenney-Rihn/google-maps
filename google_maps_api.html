@@ -31,7 +31,6 @@
             var geo = new google.maps.Geocoder();
 
             geo.geocode({address: "76 NE Interstate 410 Loop, San Antonio, TX 78216"}, function(response, status) {
-                console.log(lat);
 
                 if (status === "OK"){
                     map.setCenter(response[0].geometry.location);
@@ -43,15 +42,19 @@
             });
 
             var marker = new google.maps.Marker({position:{
+                    animation: google.maps.Animation.DROP,
                     lat: 29.519626,
-                    lng: -98.488149
+                    lng: -98.488149,
+                    icon: ""
                 }, map: map});
 
             var infowindow = new google.maps.InfoWindow({
-                content: "This is Pappadeaux"
+                content: "<ul><li>Tasty, Tasty food</li><li>Expensive</li></ul>"
 
             });
-            infowindow.open(map, marker);
+            marker.addListener("click", function(){
+                infowindow.open(map,marker);
+            });
 
         }
 
